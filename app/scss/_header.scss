@@ -1,11 +1,9 @@
 .header {
+    position: relative;
+
     // Hamburger Styles
     &.close {
-        .header__menu {
-            > span {
-                background-color: $white;
-            }
-
+        .header__toggle {
             > span:nth-child(1) {
                 transform: rotate(45deg);
             }
@@ -33,7 +31,10 @@
 
     nav {
         position: relative;
-        padding: rem(17) rem(24);
+        z-index: 1;
+        background-color: $white;
+        padding-top: rem(17);
+        padding-bottom: rem(17);
     }
 
     &__logo {
@@ -43,7 +44,7 @@
         }
     }
 
-    &__menu {
+    &__toggle {
         > span {
             display: block;
             width: 26px;
@@ -56,6 +57,26 @@
             &:not(:last-child) {
                 margin-bottom: 5px;
             }
+        }
+    }
+
+    &__menu {
+        position: absolute;
+        z-index: 0;
+
+        width: calc(100% - 3rem);
+        left: 50%;
+        transform: translateX(-50%);
+        background: $white;
+        margin-top: rem(24);
+        padding: rem(16);
+        border-radius: 3px;
+
+        a {
+            display: block;
+            padding: rem(10);
+            color: $darkBlue;
+            text-align: center;
         }
     }
 
