@@ -1,0 +1,72 @@
+.header {
+    nav {
+        margin: 24px;
+        padding: rem(17) rem(24);
+    }
+
+    &__logo {
+        img {
+            width: rem(141);
+            height: rem(22);
+        }
+    }
+
+    &__menu {
+      > span {
+          display: block;
+          width: 25px;
+          height: 3px;
+          background-color: $darkBlue;
+
+          &:not(:last-child) {
+            margin-bottom: 3px;
+          }
+      }
+    }
+
+    &__links {
+        a {
+            position: relative;
+            color: $grayishBlue;
+            font-size: $font-small;
+            transition: 300ms ease-in-out;
+
+            &:not(:last-child) {
+                margin-right: 32px;
+            }
+
+            &:before {
+                content: "";
+                position: absolute;
+                display: block;
+                width: 100%;
+                height: 5px;
+                left: 0;
+                right: 0;
+                bottom: -30px;
+                background-image: linear-gradient(to right, $limeGreen, $brightCyan);
+                opacity: 0;
+                transition: opacity 300ms ease-in-out;
+            }
+
+            &:hover {
+                color: $darkBlue;
+
+                &:before {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &__cta {
+        font-size: $font-small;
+        color: $white;
+        opacity: 1;
+        transition: opacity 300ms ease-in-out;
+
+        &:hover {
+            opacity: 0.75;
+        }
+    }
+}
